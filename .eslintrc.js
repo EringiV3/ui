@@ -19,6 +19,7 @@ module.exports = {
   plugins: ['react'],
   rules: {
     '@typescript-eslint/triple-slash-reference': 'off',
+    "@typescript-eslint/explicit-function-return-type": "off",
   },
   settings: {
     react: {
