@@ -7,10 +7,19 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "check": "run-p format lint typecheck",
+    "check": "run-p format-check lint typecheck",
     "format": "prettier --write .",
+    "format-check": "prettier --check .",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx,.json src",
     "typecheck": "tsc"
+  },
+  "lint-staged": {
+    "*": "pnpm format",
+    "*.@(ts|tsx)": "pnpm typecheck",
+    "*.@(js|ts|tsx)": "pnpm lint"
+  },
+  "simple-git-hooks": {
+    "pre-push": "yarn check"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -29,7 +38,9 @@
     "eslint-plugin-n": "^15.0.0",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.32.2",
+    "lint-staged": "^13.2.0",
     "prettier": "^2.8.5",
+    "simple-git-hooks": "^2.8.1",
     "typescript": "^4.9.5",
     "vite": "^4.2.0"
   }
