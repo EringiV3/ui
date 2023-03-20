@@ -14,9 +14,9 @@
     "typecheck": "tsc"
   },
   "lint-staged": {
-    "*": "pnpm format",
-    "*.@(ts|tsx)": "pnpm typecheck",
-    "*.@(js|ts|tsx)": "pnpm lint"
+    "*": "prettier --write .",
+    "*.@(ts|tsx)": "tsc",
+    "*.@(js|ts|tsx)": "eslint --ext .js,.jsx,.ts,.tsx,.json src"
   },
   "simple-git-hooks": {
     "pre-push": "yarn check"
