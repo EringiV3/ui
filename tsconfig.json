@@ -1,11 +1,12 @@
 {
   "extends": "@tsconfig/strictest/tsconfig.json",
   "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
     },
-    "noEmit": true,
+    "noEmit": true
   }
 }
