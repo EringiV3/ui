@@ -1,8 +1,7 @@
+const viteTsconfig = require('vite-tsconfig-paths')
+const tsconfigPaths = viteTsconfig.default
 
-const viteTsconfig = require('vite-tsconfig-paths');
-const tsconfigPaths = viteTsconfig.default;
-
-const { mergeConfig } = require('vite');
+const { mergeConfig } = require('vite')
 
 module.exports = {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
@@ -25,6 +24,6 @@ module.exports = {
   async viteFinal(config: any) {
     return mergeConfig(config, {
       plugins: [tsconfigPaths()],
-    });
+    })
   },
 }

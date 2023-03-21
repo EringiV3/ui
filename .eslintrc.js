@@ -4,11 +4,11 @@ module.exports = {
     es2021: true,
   },
   extends: [
+    'standard-with-typescript',
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
-    'standard-with-typescript',
-    'prettier',
     'plugin:storybook/recommended',
+    'prettier',
   ],
   overrides: [],
   parserOptions: {
@@ -20,6 +20,8 @@ module.exports = {
   rules: {
     '@typescript-eslint/triple-slash-reference': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/consistent-type-definitions': 'off',
+    'react/prop-types': 'off',
   },
   settings: {
     react: {
