@@ -1,10 +1,24 @@
-type Props = {
-  children: React.ReactNode
-}
+import { button, type ButtonVariants } from './Button.css'
 
-export const Button: React.FC<Props> = ({ children }) => {
+type Props = React.ComponentProps<'button'> &
+  ButtonVariants & {
+    children: React.ReactNode
+  }
+
+export const Button: React.FC<Props> = ({
+  children,
+  color,
+  size = 'medium',
+  rounded = false,
+}) => {
   return (
-    <button>
+    <button
+      className={button({
+        color,
+        size,
+        rounded,
+      })}
+    >
       <span>{children}</span>
     </button>
   )

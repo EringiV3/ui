@@ -11,5 +11,8 @@ export default meta
 export const Primary: StoryObj<typeof Button> = {
   args: {
     children: 'button',
+    color: 'accent',
+    size: 'medium',
+    rounded: true,
   },
 }
