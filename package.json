@@ -21,11 +21,11 @@
     "*.@(js|ts|tsx)": "eslint --ext .js,.jsx,.ts,.tsx,.json src"
   },
   "dependencies": {
+    "@radix-ui/colors": "^0.1.8",
     "@vanilla-extract/css": "^1.10.0",
     "@vanilla-extract/recipes": "^0.4.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "ress": "^5.0.2"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.21.3",

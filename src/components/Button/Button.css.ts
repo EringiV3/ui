@@ -1,43 +1,45 @@
 import { recipe, type RecipeVariants } from '@vanilla-extract/recipes'
 
+import { vars } from '@/styles'
+
 export const button = recipe({
   base: {
     borderRadius: 6,
+    fontFamily: 'inherit',
+    fontSize: vars.fontSize.md,
+    border: 'none',
+    cursor: 'pointer',
+    outline: 'none',
+    padding: 0,
+    appearance: 'none',
+    transition: vars.transition.all,
+    ':focus': {
+      outline: `2px solid ${vars.color.gray9}`,
+      outlineOffset: 2,
+    },
+    ':active': {
+      transform: 'scale(0.95)',
+    },
   },
 
   variants: {
     color: {
-      neutral: { background: 'whitesmoke' },
-      brand: { background: 'blueviolet' },
-      accent: { background: 'slateblue' },
+      primary: {
+        background: vars.color.gray12,
+        color: vars.color.gray1,
+        ':hover': { background: vars.color.gray11 },
+      },
     },
     size: {
-      small: { padding: 12 },
-      medium: { padding: 16 },
-      large: { padding: 24 },
-    },
-    rounded: {
-      true: { borderRadius: 999 },
+      small: { padding: 6 },
+      medium: { padding: 12 },
+      large: { padding: 18 },
     },
   },
 
-  // Applied when multiple variants are set at once
-  compoundVariants: [
-    {
-      variants: {
-        color: 'neutral',
-        size: 'large',
-      },
-      style: {
-        background: 'ghostwhite',
-      },
-    },
-  ],
-
   defaultVariants: {
-    color: 'accent',
+    color: 'primary',
     size: 'medium',
-    rounded: false,
   },
 })
 
